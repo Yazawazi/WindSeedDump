@@ -6,9 +6,6 @@ import struct
 def xor(message, key):
     return hex(message ^ key)
 
-def log(level, message):
-    print(f"[{level}]\t{message}")
-
 def dump(jsonPath):
     try:
         config = json.load(open(jsonPath, "r"))["object"]
@@ -19,7 +16,6 @@ def dump(jsonPath):
 
     if config["areaNotify"]["areaType"] != 1:
         print("I cannnot deal with type 2 or 3.")
-    else:
         sys.exit(1)
 
     luac = base64.b64decode(data)
