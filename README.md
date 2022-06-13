@@ -9,19 +9,27 @@ python .\dump.py json.json
 
 ```jsonc
 {
-  "index": num,
+  "index": int,
   "object": {
     "areaNotify": {
-      "areaId": num,
+      "areaId": int,
       "areaCode": base64str,
       "areaType": 1
     }
   },
   "packet": base64str,
-  "packetId": num,
+  "packetId": int,
   "protoName": "WindSeedClientNotify",
   "reltime": float,
-  "source": num,
-  "time": num
+  "source": int,
+  "time": int
 }
 ```
+
+## Disclaimer
+
+Children do not understand things, just write for fun. You want to do bad things, I can only condemn you morally, I can not stop you.
+
+## How to build
+
+I can't talk properly: `modified Lua 5.3`, `0x04`, `CS.UnityEngine`
