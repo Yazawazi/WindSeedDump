@@ -40,7 +40,7 @@ def DFLHFPIHIDN(NFOGKEEIGCC, GIFDEDMDCLE):
     POCHLHMFHPK.close()
 
     for i in range(len(COPFDHKIFHO)):
-        if COPFDHKIFHO[i] == "0x04":
+        if COPFDHKIFHO[i] == "04":
             COPFDHKIFHO.pop(i)
             break
 
