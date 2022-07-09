@@ -6,19 +6,16 @@ import struct
 def xor(message, key):
     return hex(message ^ key)
 
-def dump(jsonPath):
+def dump(path):
     try:
-        config = json.load(open(jsonPath, "r"))["object"]
+        config = json.load(open(path, "r"))["object"]
         data = config["areaNotify"]["areaCode"]
+        if config["areaNotify"]["areaType"] != 1:
+            print("I cannnot deal with type 2 or 3.")
+            sys.exit(1)
+        luac = base64.b64decode(data)
     except:
-        sys.exit(1)
-    
-
-    if config["areaNotify"]["areaType"] != 1:
-        print("I cannnot deal with type 2 or 3.")
-        sys.exit(1)
-
-    luac = base64.b64decode(data)
+        luac = open(path, "rb").read()
 
     if b"sb_1184180438" in luac:
         start = luac.find(0x38) + 14
@@ -56,7 +53,6 @@ def dump(jsonPath):
         data.reverse()
 
         with open("result.luac", "wb") as file:
-            # No 0xFuck
             for item in data:
                 pack = struct.pack("B", int(item, 16))
                 file.write(pack)
@@ -66,7 +62,7 @@ def dump(jsonPath):
     print("Done! result.luac")
 
 def help():
-    print("dump.py <json>")
+    print("dump.py <bin or json path>")
 
 
 if len(sys.argv) != 2:

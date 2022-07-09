@@ -1,11 +1,14 @@
-# WindSeedDump
-WindSeed Type 1 `sb_1184180438` Dump Tool
+# WindSeedDump / 风种子转储工具
 
-```
-python .\dump.py json.json
+WindSeed Type 1 `sb_1184180438`.
+
+支持类型 1 官服的 `sb_1184180438` 解析。
+
+```bash
+python .\dump.py [json or bin]
 ```
 
-## Format of JSON
+## Format of JSON / JSON 格式
 
 ```jsonc
 {
@@ -26,10 +29,8 @@ python .\dump.py json.json
 }
 ```
 
-## Disclaimer
+## Disclaimer / 免责声明
 
 Children do not understand things, just write for fun. You want to do bad things, I can only condemn you morally, I can not stop you.
 
-## How to build
-
-I can't talk properly: `modified Lua 5.3`, `0x04`, `CS.UnityEngine`
+小孩子不懂事，写着玩的。你做坏事，我管不着你。
